@@ -4,23 +4,24 @@ public class Ex02 {
 
     public boolean isPalindrome(String s){
 
-        boolean flag = false;
-        String sLowerCase = s.toLowerCase();
+        String sLowerCase = s.toLowerCase().trim();
         int end = sLowerCase.length() - 1;
         int start = 0;
 
+        if(sLowerCase.length() < 2){
+            return false;
+        }
+
         while(start <= end){
 
-            if(sLowerCase.charAt(start) == sLowerCase.charAt(end)){
-                flag = true;
-            } else {
-               flag = false;
+            if(sLowerCase.charAt(start) != sLowerCase.charAt(end)){
+                return false;
             }
             start++;
             end--;
         }
 
-        return flag;
+        return true;
     }
 
 }
